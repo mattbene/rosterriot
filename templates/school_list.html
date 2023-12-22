@@ -1,0 +1,25 @@
+<!-- templates/school_list.html -->
+{% block content %}
+<table id="schools">
+  <thead>
+    <!--<th scope="col">Sport</th>-->
+    <th scope="col">Name</th>
+    <th scope="col">Mascot</th>
+    <th scope="col">City</th>
+    <th scope="col">State</th>
+  </thead>
+  <tbody>
+    {% for school in school_list %}
+      {% if school.espn_id != null and school.state == 'Missouri' %}
+      <tr>
+        <!--<td>{{event.sport}}</td>-->
+        <td>{{school.short_name}}</td>
+        <td>{{school.mascot}}</td>
+        <td>{{school.city}}</td>
+        <td>{{school.state}}</td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

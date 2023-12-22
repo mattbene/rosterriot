@@ -1,0 +1,116 @@
+<!-- templates/base.html -->
+<header>
+    <title>RosterRiot</title> {% block title %}{% endblock title %}
+    <!--
+        #EF7B45 - Orange (Crayola)
+        #4D7EA8 - Steel Blue
+        #070600 - Smoky Black
+        #F4F1DE - Eggshell
+        #8CBA80 - Olivine
+    -->
+    <style>
+        
+        :root {
+            background-color: #070600;
+            color: #F4F1DE;
+        }
+        header {
+            height: 2.5vh;
+            width: 100vw;
+            display: flex;
+        }
+        section {
+            margin: 5vh 0 0 0;
+        }
+        .left {
+            width: 50vw;
+            font-family: monospace;
+        }
+        .right {
+            justify-content: right;
+            width: 50vw;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+            background-color: #EF7B45;
+            border-radius: 1.25ch;
+        }
+            th {
+                text-decoration: underline;
+                }
+            tbody {
+                padding-bottom: 30px;
+            }
+                td {
+                    color: #070600;
+                    text-align: right;
+                    padding-right: 1vw;
+                }
+        
+        .stat-int {
+            text-align: right;
+            padding-right: 1vw;
+            min-width: 3ch;
+        }
+        .stat-dec {
+            text-align: right;
+            padding-right: 1vw;
+            min-width: 6ch;
+        }
+        .alpha {
+            padding-left: 1vw;
+            text-align: left;
+            min-width: 8ch;
+        }
+    </style>
+    <section class="left">
+        <a href="{% url 'schools' %}">Schools</a>
+    </section>
+    <section class="right">
+        <button id="login">login</button>
+    </section>
+</header>
+<body>
+    <div id="mbb">
+        <div class="content">
+            <p>Hello, yes, this is the Men's Basketball Section...</p>
+            <table id="player-stats">
+                <thead>
+                  <!--<th scope="col">Sport</th>-->
+                  <th class="alpha" scope="col">Player</th>
+                  <th class="stat-int" scope="col">Shots</th>
+                  <th class="stat-int" scope="col">3s</th>
+                  <th class="stat-int" scope="col">FTs</th>
+                  <th class="stat-int" scope="col">Reb</th>
+                  <th class="stat-int" scope="col">Ast</th>
+                  <th class="stat-int" scope="col">Stl</th>
+                  <th class="stat-int" scope="col">Blk</th>
+                  <th class="stat-int" scope="col">Tov</th>
+                  <th class="stat-int" scope="col">Fls</th>
+                  <th class="stat-int" scope="col">Pts</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <!--<td>{{event.sport}}</td>-->
+                    <td class="alpha">test</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                    <td class="stat-int">0</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+        <section>
+            
+        </section>
+    </div>
+</body>
+{% block content %} {% endblock content %}

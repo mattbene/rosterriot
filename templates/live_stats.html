@@ -1,0 +1,34 @@
+<!-- templates/school_list.html -->
+{% block content %}
+<table id="player-stats">
+  <thead>
+    <!--<th scope="col">Sport</th>-->
+    <th scope="col">Player</th>
+    <th scope="col">Shots</th>
+    <th scope="col">3s</th>
+    <th scope="col">FTs</th>
+    <th scope="col">Reb</th>
+    <th scope="col">Ast</th>
+    <th scope="col">Stl</th>
+    <th scope="col">Blk</th>
+    <th scope="col">Pts</th>
+  </thead>
+  <tbody>
+    {% stats = stats_info['live_stats'].values() %}
+    {% for statline in stats %}
+    <tr>
+      <!--<td>{{event.sport}}</td>-->
+      <td>{{ statline.player_id }}</td>
+      <td>{{ statline.shot_attempts }}</td>
+      <td>{{ statline.three_pointers }}</td>
+      <td>{{ statline.free_throw_makes }}</td>
+      <td>{{ statline.rebounds }}</td>
+      <td>{{ statline.assists }}</td>
+      <td>{{ statline.steals }}</td>
+      <td>{{ statline.blocks }}</td>
+      <td>{{ statline.points }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,32 @@
+<!-- templates/school_list.html -->
+{% block content %}
+<table id="todays-games">
+  <thead>
+    <!--<th scope="col">Sport</th>-->
+    <th class="alpha" scope="col">Game ID</th>
+    <th class="alpha" scope="col">Date</th>
+    <th class="alpha" scope="col">Away</th>
+    <th class="alpha" scope="col">Home</th>
+    <th class="alpha" scope="col">Location</th>
+    <th class="stat-dec" scope="col">Spread</th>
+    <th class="stat-dec" scope="col">Total</th>
+    <th class="alpha" scope="col">Favorite</th>
+    <th class="alpha" scope="col">Final</th>
+  </thead>
+  <tbody>
+    {% for game in games_today %}
+    <tr>
+      <td class="alpha">{{ game.id }}</td>
+      <td class="alpha">{{ game.date }}</td>
+      <td class="alpha">{{ game.away_id }}</td>
+      <td class="alpha">{{ game.home_id }}</td>
+      <td class="alpha">{{ game.location }}</td>
+      <td class="stat-dec">{{ game.spread }}</td>
+      <td class="stat-dec">{{ game.total }}</td>
+      <td class="alpha">{{ game.favorite }}</td>
+      <td class="alpha">{{ game.is_final }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
